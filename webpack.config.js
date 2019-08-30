@@ -27,8 +27,20 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/, // fonts use file-loader too
-        user: [
+        use: [
           'file-loader'
+        ]
+      },
+      {
+        test: /\.(csv|tsv)$/,
+        use: [
+          'csv-loader'
+        ]
+      },
+      {
+        test: /\.xml$/,
+        use: [
+          'xml-loader'
         ]
       }
     ]
