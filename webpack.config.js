@@ -1,13 +1,13 @@
 // run build with this file by npx webpack --config webpack.config.js
 // however, if a config file is present it will run with it by default
 
-const path = require('path');
+const path = require('path'); // helper to get absolute path
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js', // first file in dependency graph that kicks off entire app
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'bundle.js', // webpack runtine / bootstrap code enabling that enambles moduels to run in the browser
+    path: path.resolve(__dirname, 'dist') // create build folder inside root directory
   },
   // in order to import a CSS file from within a JS module, we need to install and add style-loader and css-loader to module configuration. So, after running `npm install --save-dev style-loader css-loader` in terminal, add the following:
   module: {
