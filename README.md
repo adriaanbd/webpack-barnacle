@@ -48,14 +48,14 @@ use: "babel-loader"
 
 Note: loaders functionally transform themselves right to left, inside to out or bottom to top. This allows to use an array of loaders that'd get execute from last to first.
 
-A common example of this would be transforming a `scss` file:
+A common example of this would be transforming a `scss` file (remember to install `sass-loader`):
 
 ```
 test: `/\.scss$/`,
 use: [
-  "style-loader",
-  "css-loader",
-  "sass-loader"
+  "style-loader", // creates style nodes from JS strings
+  "css-loader", // translates css to CommonJS
+  "sass-loader" // compiles Sass to CSS
 ]
 ```
 
