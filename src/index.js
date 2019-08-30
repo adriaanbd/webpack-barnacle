@@ -1,21 +1,14 @@
 import _ from 'lodash';
-import './style.css'; // we can import the css file because of style-loader and css-loader in webpack config file
-import Pic from './image.jpg'; // we can import the image because of file-loader in webpack config file
-import Data from './data.xml'; // we can import the image because of xml-loader in webpack config file
+import printMe from './print.js';
 
 function component() {
   const element = document.createElement('div');
-
+  const btn = document.createElement('button');
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
 
-  const myImage = new Image();
-  myImage.src = Pic; // The html-loader handles <img src="./my-image.png" />
-  myImage.className = 'pic'
-
-  element.appendChild(myImage);
-
-  console.log(Data);
+  element.appendChild(btn);
 
   return element;
 }
