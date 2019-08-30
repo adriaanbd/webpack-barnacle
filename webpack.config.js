@@ -24,6 +24,12 @@ module.exports = {
         use: [ // The html-loader handles <img src="./my-image.png" />
           'file-loader' // npm install --save-dev file-loader
         ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/, // fonts use file-loader too
+        user: [
+          'file-loader'
+        ]
       }
     ]
   }
