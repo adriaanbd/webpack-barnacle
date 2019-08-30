@@ -1,3 +1,10 @@
 .hello { 
-  color: red; 
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.pic {
+  height: 300px;
+  width: 300px;
 }
