@@ -9,7 +9,7 @@ function component() {
   element.classList.add('hello');
 
   const myImage = new Image();
-  myImage.src = Pic;
+  myImage.src = Pic; // The html-loader handles <img src="./my-image.png" />
   myImage.className = 'pic'
 
   element.appendChild(myImage);
