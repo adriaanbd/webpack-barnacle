@@ -18,10 +18,24 @@ Development Mode branch includes:
 
 ## Getting started with Webpack
 
+**Rememebr to run `npm init`**
+
 1. Run `npm install webpack --save-dev` to add it as a development dependency
 2. Run `npm install webpack-cli --save-dev`  to install CLI in dev dependency as well
-3. Add `"build": "webpack"` in `"scripts"` key inside `package.json`
-4. Create `webpack.config.js` and populate the `entry` and `output` keys with the files used for entry (`index.js`) and output (`bundle.js`) specifying the absolute path wherein to create the build folder (`/dist`)
+3. Add `"build": "webpack"` in `"scripts"` key inside `package.json`. This allows you to run `npm run build` instead of `npx webpack`.
+4. Create `webpack.config.js` and populate the `entry` and `output` keys with the files used for entry (`index.js`) and output (`bundle.js`) specifying the absolute path wherein to create the build folder (`/dist`). A common example is the following: 
+```
+// webpack.config.js
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
 5. Include the rest of the the tools in asset management, output management and development mode according to needs.
 
 
